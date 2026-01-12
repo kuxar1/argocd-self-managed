@@ -1,15 +1,18 @@
+global:
+  domain: argocd.kuxar.uk
+
 server:
   service:
     type: ClusterIP
+
   ingress:
     enabled: true
-    ingressClassName: "traefik"
+    ingressClassName: traefik
+    hostname: argocd.kuxar.uk
+    path: /
+    pathType: Prefix
     annotations: {}
-    hosts:
-      - host: argocd.kuxar.uk
-        paths:
-          - /
-    tls: []
+    tls: false
 
 configs:
   params:
