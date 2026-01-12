@@ -1,0 +1,16 @@
+server:
+  service:
+    type: ClusterIP
+  ingress:
+    enabled: true
+    ingressClassName: "traefik"
+    annotations: {}
+    hosts:
+      - host: argocd.kuxar.uk
+        paths:
+          - /
+    tls: []
+
+configs:
+  params:
+    server.insecure: "true"
